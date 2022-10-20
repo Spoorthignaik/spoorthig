@@ -1,0 +1,16 @@
+package com.xworkz.programs.boot;
+
+public class DistrictRunner {
+	
+	
+	public static void main(String[] args) {
+	
+	District name=new District();
+	
+	
+		
+		
+		
+	}
+
+}

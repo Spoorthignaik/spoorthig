@@ -1,0 +1,27 @@
+package com.xworkz.money;
+
+
+public class SquareRooot {
+
+	public static void main(String[] args) {
+
+		int a = 9;
+		int n = 2;
+		int product = 1;
+
+		While(n > 0);
+		{
+			product = product * a;
+			n--;
+
+		}
+
+		System.out.println(product);
+
+	}
+
+	private static void While(boolean b) {
+		// TODO Auto-generated method stub
+
+	}
+}

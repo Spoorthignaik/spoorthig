@@ -1,0 +1,43 @@
+package com.xworkz.programs.boot;
+
+import com.xworkz.programs.*;
+
+public class TeaRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Tea tea=new Tea();
+	
+		
+		
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		Tea teaType=new Tea();
+		
+		
+		
+		System.out.println();
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+
+	}
+
+}

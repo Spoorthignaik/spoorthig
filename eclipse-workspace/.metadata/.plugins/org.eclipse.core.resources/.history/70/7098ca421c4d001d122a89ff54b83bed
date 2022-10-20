@@ -1,0 +1,31 @@
+package com.xworkz.programs.boot;
+
+import com.xworkz.programs.*;
+
+public class TractorRunner {
+
+	public static void main(String[] args) {
+	
+		Tractor tractor=new Tractor();
+		System.out.println(tractor.name);	
+		System.out.println(tractor.brand);	
+		System.out.println(tractor.price);	
+		System.out.println(tractor.color);	
+		System.out.println(tractor.hp);	
+		System.out.println(tractor.model);
+	
+	
+		Tractor tractor1=new Tractor("mahindra");
+		System.out.println(tractor1.name);	
+		System.out.println(tractor1.brand);	
+		System.out.println(tractor1.price);	
+		System.out.println(tractor1.color);	
+		System.out.println(tractor1.hp);	
+		System.out.println(tractor1.model);
+	
+	
+	
+	
+	}	
+	
+}

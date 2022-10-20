@@ -1,0 +1,106 @@
+package com.xworkz.programs.boot;
+
+import com.xworkz.programs.Chain;
+
+public class ChainRunner {
+	
+	public static void main(String[] args) {
+		
+		Chain chain=new Chain();
+		System.out.println(chain.type);
+		System.out.println(chain.price);
+		System.out.println(chain.length);	
+		System.out.println(chain.material);	
+		System.out.println(chain.weight);	
+		System.out.println(chain.stolen);	
+		System.out.println(chain.fresh);	
+		System.out.println(chain.usedFor);
+	
+	
+		Chain chain1=new Chain("steel");
+		System.out.println(chain1.type);
+		System.out.println(chain1.price);
+		System.out.println(chain1.length);	
+		System.out.println(chain1.material);	
+		System.out.println(chain1.weight);	
+		System.out.println(chain1.stolen);	
+		System.out.println(chain1.fresh);	
+		System.out.println(chain1.usedFor);
+		
+		Chain chain2=new Chain("steel",299);
+		System.out.println(chain2.type);
+		System.out.println(chain2.price);
+		System.out.println(chain2.length);	
+		System.out.println(chain2.material);	
+		System.out.println(chain2.weight);	
+		System.out.println(chain2.stolen);	
+		System.out.println(chain2.fresh);	
+		System.out.println(chain2.usedFor);
+		
+		
+		Chain chain3=new Chain("loop",599,15.5);
+		System.out.println(chain3.type);
+		System.out.println(chain3.price);
+		System.out.println(chain3.length);	
+		System.out.println(chain3.material);	
+		System.out.println(chain3.weight);	
+		System.out.println(chain3.stolen);	
+		System.out.println(chain3.fresh);	
+		System.out.println(chain3.usedFor);
+		
+		Chain chain4=new Chain("ring",399,12.2,"steel");
+		System.out.println(chain4.type);
+		System.out.println(chain4.price);
+		System.out.println(chain4.length);	
+		System.out.println(chain4.material);	
+		System.out.println(chain4.weight);	
+		System.out.println(chain4.stolen);	
+		System.out.println(chain4.fresh);	
+		System.out.println(chain4.usedFor);
+		
+		
+		Chain chain5=new Chain("closure",299,25.5,"steel",50.5);
+		System.out.println(chain5.type);
+		System.out.println(chain5.price);
+		System.out.println(chain5.length);	
+		System.out.println(chain5.material);	
+		System.out.println(chain5.weight);	
+		System.out.println(chain5.stolen);	
+		System.out.println(chain5.fresh);	
+		System.out.println(chain5.usedFor);
+		
+		Chain chain6=new Chain("closure",299,12,2,"steel",100.5,true);
+		System.out.println(chain6.type);
+		System.out.println(chain6.price);
+		System.out.println(chain6.length);	
+		System.out.println(chain6.material);	
+		System.out.println(chain6.weight);	
+		System.out.println(chain6.stolen);	
+		System.out.println(chain6.fresh);	
+		System.out.println(chain6.usedFor);
+		
+		Chain chain7=new Chain("closure",299,38.5,"steel",120.5,true,false);
+		System.out.println(chain7.type);
+		System.out.println(chain7.price);
+		System.out.println(chain7.length);	
+		System.out.println(chain7.material);	
+		System.out.println(chain7.weight);	
+		System.out.println(chain7.stolen);	
+		System.out.println(chain7.fresh);	
+		System.out.println(chain7.usedFor);
+		
+		Chain chain8=new Chain("closure",299,38.5,"steel",120.5,true,false,"dog");
+		System.out.println(chain8.type);
+		System.out.println(chain8.price);
+		System.out.println(chain8.length);	
+		System.out.println(chain8.material);	
+		System.out.println(chain8.weight);	
+		System.out.println(chain8.stolen);	
+		System.out.println(chain8.fresh);	
+		System.out.println(chain8.usedFor);
+		
+		
+		
+		
+		
+}

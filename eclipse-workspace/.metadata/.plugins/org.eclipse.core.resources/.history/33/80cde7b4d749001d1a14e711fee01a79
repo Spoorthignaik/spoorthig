@@ -1,0 +1,28 @@
+package com.xworkz.programs.boot;
+
+
+import com.xworkz.programs.*;
+
+public class SongRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Song songName=new Song();
+		Song songSinger=new Song();
+		Song songLyricist=new Song();
+		Song SongLanguage=new Song();
+		
+		
+		songName.name="kesariya";
+		songSinger.singer="ArjithSingh";
+		songLyricist.lyricist="  ";
+		
+		
+		
+		
+		
+		
+	}
+
+}
