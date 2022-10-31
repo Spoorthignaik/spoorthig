@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.xworkz.programs;
 
 public class Tractor {
@@ -57,3 +58,64 @@ public class Tractor {
 	
 	
 }
+=======
+package com.xworkz.programs;
+
+public class Tractor {
+
+  public String name;
+  public String brand;
+  public long price;
+  public String color;
+  public int hp;
+  public int model;
+  
+	public Tractor() {
+		super();
+		System.out.println("default value");	
+		
+	}
+	
+	public Tractor(String name,String brand) {
+	    this.name=name;
+	    this.name=brand;
+	    System.out.println("created name of the tractor");   
+	    System.out.println("created brand of the tractor");
+		
+		
+	}
+	public Tractor(String name,String brand,long price) {
+		
+		this(name,brand);
+		this.price=price;
+	    System.out.println("created price of the tractor");
+		
+	}
+	
+	public Tractor(String name,String brand,long price,String color)
+	{
+		this(name,brand,price);
+		this.color=color;
+	    System.out.println("created color of the tractor");
+		
+	}
+	
+	public Tractor(String name,String brand,long price,String color,int hp)
+	{
+		this(name,brand,price,color);
+		this.hp=hp;
+	    System.out.println("created hp of the tractor");
+		
+	}
+	
+	public Tractor(String name,String brand,long price,String color,int hp,int model)
+	{
+		this(name,brand,price,color,hp);
+		this.model=model;
+	    System.out.println("created model of the tractor");
+		
+	}
+	
+	
+}
+>>>>>>> c218642c8eaf22f2b8a3691d75d5d610db725fd0
