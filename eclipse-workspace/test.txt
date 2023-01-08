@@ -1,0 +1,142 @@
+1    package com.xworkz.examples;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+		List<Integer>list=new ArrayList<Integer>();
+		list.add(45);
+		list.add(333);
+		list.add(76);
+		list.add(29);
+		list.add(900);
+		list.add(23);
+		list.add(474);
+		list.add(654);
+		list.add(29);
+		list.add(454);
+		
+	System.out.println("max value="+Collections.max(list));
+	
+	System.out.println("max value="+Collections.min(list));
+		
+		
+		
+	}
+
+}
+
+ 2  public class Love {
+
+			public static boolean flowersPetals(int flower1Petals, int flower2Petals) {
+				return false;
+				
+			}
+			
+			    public static void main(String[] args) {
+
+			        Scanner flower1 = new Scanner(System.in);
+			        Scanner flower2 = new Scanner(System.in);
+
+			        System.out.print("Enter a number of petals: ");
+			        int num1 = flower1.nextInt();
+			        int num2 = flower2.nextInt();
+			        flowersPetals(num1,num2);
+			        
+			        if(num1%2==0 && num2%2==0) {
+			        	System.out.println("They are not in love");
+			        }else {
+			        	System.out.println("They are in love");
+			        }
+			    }
+			}
+
+
+
+3   what are generalized and specialized classes in java
+
+generalized classes---upcasting
+     Converting a subclass type into a superclass type is called Generalization
+specialized classes---downCasting
+     Converting a super class type into a sub class type is called Specialization
+  
+
+4. a) We should declared our class as final, when we declare class as a final it stops the execution in inheritance. But can't define our class as final, if it is an abstract class.
+	A class declared as final can't be extended by any other class.
+   b) java.lang.String,  java.lang.Math are final classes.
+      String is the example of final classes deefined in java API.
+   c) by using interfce we can acheive multiple inheritance in java.
+   
+   
+ 5. list is the sorted collections we used
+ 
+ 
+ 6. Array list
+    * Elements stored in a sequence list
+	* it is faster when we try  to read
+	*internally uses array   []
+	* manipulation or updation is slower
+	
+	
+	Linked list
+	  * internally uses the node
+	  *it is slower , when wetry to read
+	  *manipulation or updation is faster
+	  
+	  
+7.  ListIterator
+      * List Iterator can traverse both forward and backwardin direction.
+	  * List iterato helps to replace the element
+	  * Deletion of element is allowed
+
+
+    Iterator
+     * Iterator can traverse only in a forward direction
+	 * Iterator cannot replace the element.
+	 * Deletition of element is not allowed
+   
+   
+ 8.when overriding method in child class , the return type may vary
+ 
+ 
+ 
+ 10. static polymorphism--when we call the method at compile time is static polymorphism--
+                        it is less flexible compared to the dynamic polymorphism--
+		
+     Dynamic Polymorphism-- when we call the method at run time is called as dynamic polymorphism--    		
+						    it is more flexible
+ 
+   
+10 by using encapsulation 
+because the main use of encapsulation is security purpose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
