@@ -10,7 +10,7 @@ public class SoldierRunner {
 	
 	public static void main(String[] args) {
 		
-		SoldierDto dto=new SoldierDto("mahesh babu", 2, "lowRated", "cavalry", "india");
+		SoldierDto dto=new SoldierDto("ma", 2, "lowRated", "cavalry", "india");
 		
 		SoldierServiceImpl service=new SoldierServiceImpl();
 		
