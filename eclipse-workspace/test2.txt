@@ -1,0 +1,78 @@
+1. iterable---Collection------1.list---1.ArrayList   2.linkedList
+						      2.set--- 1.HashSet      2.LinkedHashSet
+							  3.queue---- 1.LinkedList
+							  4.Sorted Set----1.treeset
+							  
+MAIN INTERFACESARE---list ,set ,sortedset , queue , iterator , foreach ,stram.						  
+							  
+LIST----1.list it an interface it is available in java.util package
+        2. it contains null or duplicate value
+		3.it maintains the insertion orede
+		4.index based
+
+SET---- 1. set is an interface it is available in java.util packages
+		2.it does not contains duplicate values
+        3. it doesn't maintain the insertion order
+        4.not index based
+
+		
+2.  MAP---Sortedmap----treemap
+         hashmap-----linkedHashMap
+		 
+
+3.HASHSET----1.hash set allows null object
+             2. it is used equals methods to compare the two elements or ref
+			 3. it does not allows duplicates
+		     4. it does not maintain any order
+		 
+  TREESET----1. it does not allows null object
+			 2.it is uded compare methods to compare two objects
+			 3. it allows the duplicates
+			 4.it maintains oreder.
+  
+  
+  
+10. The Dependency Injection is a design pattern that removes the dependency of the programs.
+ In such case we provide the information from the external source such as XML file.
+ It makes our code loosely coupled and easier for testing.
+ 
+ by using autowired keyword we can acheive dependency injections.
+  
+ 
+6.
+ 1.get the string
+ 2.Create a list ofcharacter.
+ 3.convert to string to intStream using chars() methods
+ 4.convert intStream to stram using mapToobj() methods
+ 5.collect the elements as a list of character using collect()
+ 6. return the list 
+ 
+  
+		 
+		 
+13.String builder--string builder objects are not synchronized ad not thread for safe
+
+   String buffer--string buffer synchronized and thread safe.
+
+		 
+		 
+15. Spring AOP-- aspect oriented programms
+    IOC---inversion of control -- to acheive loose coupling between object dependencis.
+    @Component---it is hepls to create and manage the .class files 
+    @ComonentScan--scan the component from  the packages
+	@Bean--to registerd the object in any 
+	instance of class
+		 
+		 
+		 
+		 
+		 
+17. Tomcat-- it helps to develop we server
+    quarkus--it helps to perform validations
+    server--it is a connections between two systems
+    Maven--it is used for java projects 
+	       it helps to download dependencies and some libraries
+           it helps to get jar files
+          		   
+		 
+		 
