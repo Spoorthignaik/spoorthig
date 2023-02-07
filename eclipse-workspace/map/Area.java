@@ -22,6 +22,7 @@ public class Area {
 		ref.put("sagara", 577232L);
 		ref.put("koppa", 577333L);
 		
+		System.out.println("=====key====");
 		Set<String>keys=ref.keySet();
 		
 		keys.forEach(e ->System.out.println(e));
