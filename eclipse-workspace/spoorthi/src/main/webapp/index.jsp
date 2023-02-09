@@ -38,11 +38,11 @@
 
 
 <h1>WORKING  HERE</h1>
-
-<form action="pastry" >
+<form action="pastry"  method="get" >
 <h4>Display cake : ${spoo}</h4>
 <input type="submit" value="show cake" />
 </form>
+
 
 <form  action="email" >
 <h4>Display email : ${mail}</h4>
