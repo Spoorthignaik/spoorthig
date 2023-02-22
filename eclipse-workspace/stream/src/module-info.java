@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author shaur
+ *
+ */
+module stream {
+}
