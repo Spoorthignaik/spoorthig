@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>X-workz</title>
+<title>Insert title here</title>
+
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -15,8 +17,9 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
-</head>
-<body>
+
+
+
 
 <nav class="navbar navbar-light bg-dark">
   <div class="container-fluid">
@@ -29,49 +32,66 @@
 					</div>
 					
 					
+					
 					<a href="index.jsp">Home</a>
+					
   </div>
 </nav>
 
-<h1>Watch Search By Type</h1>
 
-<h3><span style="color:red;">${message}</span></h3>
-<form action="searchByType" method="get">
-Search By Type <input type="text" name="type"/>
-<input type="submit" value="search"/>
-</form>
 
-<table class="table">
-   <thead>
-   <tr>
-     <th>ID</th>
-     <th>Brand</th>
-     <th>Color</th>
-     <th>Type</th>
-     <th>Price</th>
-     <th>Warranty</th>
-     <th>Edit</th>
-     <th>Delete</th>
-     <tr>
-     </thead>
-     
-     <tbody>
-     <c:forEach items="${list}" var="t">
-     <th scope="row"></th>
-     <tr>
-     
-     <td>${t.id}</td>
-     <td>${t.brand}</td>
-     <td>${t.color}</td>
-     <td>${t.type}</td>
-     <td>${t.price}</td>
-     <td>${t.warranty}</td>
-     <td><a href="update?id=${t.id}">Edit</a></td>
-     <td><a href="delete?id=${t.id}">Delete</a></td>
-     </tr>
-     </c:forEach>
-     </tbody>
 
-</table>
+
+</head>
+<body>
+
+
+
+
+<h3 style="color: green;">Find All</h3>
+	<h3>
+		<span style="color: red;">${messege }</span>
+	</h3>
+
+	
+
+	<div>
+	<table class="table table-bordered">
+	<tr>
+	<th scope="col">Id</th>
+	<th scope="col">Brand</th>
+	<th scope="col">Color</th>
+	<th scope="col">Price</th>
+	<th scope="col">Warranty</th>
+	<th scope="col">Type</th>
+	<th scope="col">Edit</th>
+	<th scope="col">Delete</th>
+	
+	 
+	</tr>
+	
+	<c:forEach items="${dto}" var="d">
+	<tr>
+	<td>${d.id}</td>
+	<td>${d.brand}</td>
+	<td>${d.color}</td>
+	<td>${d.price}</td>
+	<td>${d.warranty}</td>
+	<td>${d.type}</td>
+	<td> <a href="update?id=${d.id }">Edit</a></td>
+	<td> <a href="delete?id=${d.id }">Delete</a></td>
+	
+	</tr>
+	
+	</c:forEach>
+	</table>
+	
+	
+	</div>
+
+
+
+
+
 </body>
 </html>

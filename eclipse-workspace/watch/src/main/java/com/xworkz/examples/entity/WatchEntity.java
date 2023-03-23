@@ -9,6 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "watch_table")
 @NamedQuery(name = "findByType",query = "select ent from WatchEntity ent where ent.type=:typ")
+@NamedQuery(name = "findAll", query = "select ent from WatchEntity ent ")
+
+@NamedQuery(name = "findByBrand", query = "select ent from WatchEntity ent where ent.brand=:brand ")
+@NamedQuery(name = "findByBrandAndType", query = "select god from WatchEntity god where god.brand=:brand and god.type=:type")
 public class WatchEntity {
 	
 	 @Id

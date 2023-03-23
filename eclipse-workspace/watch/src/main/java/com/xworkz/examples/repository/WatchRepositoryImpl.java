@@ -11,8 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.xworkz.examples.entity.WatchEntity;
+import com.xworkz.examples.service.WatchServiceImpl;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Repository
+@Slf4j
 public class WatchRepositoryImpl implements WatchRepository {
 
 	@Autowired
@@ -74,22 +78,71 @@ public class WatchRepositoryImpl implements WatchRepository {
 	}
 
 	@Override
-	public boolean deleteById(int id) {
-		System.out.println("running deleteById in repo.............");
-
+	public WatchEntity deleteById(int id) {
 		EntityManager manager = this.entityManagerFactory.createEntityManager();
-		WatchEntity watchEntity = manager.find(WatchEntity.class, id);
-
-		try {
-			EntityTransaction transaction = manager.getTransaction();
-			transaction.begin();
-			manager.remove(watchEntity);
-			transaction.commit();
-			return true;
-		} 
-		finally {
+		EntityTransaction transaction = manager.getTransaction();
+		WatchEntity delete = manager.find(WatchEntity.class, id);
+		transaction.begin();
+		manager.remove(delete);
+		transaction.commit();
 		manager.close();
+		return delete;
+	}
+
+	
+	
+	@Override
+	public List<WatchEntity> findAll() {
+		// TODO Auto-generated method stub
+		EntityManager entityManager = this.entityManagerFactory.createEntityManager();
+		try {
+			Query query = entityManager.createNamedQuery("findAll");
+			System.out.println("Query:" + query);
+			List<WatchEntity> list = query.getResultList();
+			System.out.println(list);
+			return list;
+		} finally {
+			entityManager.close();
 		}
 
 	}
+	
+	
+	@Override
+	public List<WatchEntity> findByBrandAndType(String brand, String type) {
+		System.out.println("Running findByBrandAndType:"+brand+type);
+		
+		EntityManager manager=this.entityManagerFactory.createEntityManager();
+		try {
+		Query query=manager.createNamedQuery("findByBrandAndType");
+		query.setParameter("brand", brand);
+		query.setParameter("type", type);
+		System.out.println("Query:"+query);
+		List<WatchEntity> list=query.getResultList();
+		System.out.println("List found in repo:"+list.size());
+		return list;
+		}finally {
+			manager.close();
+		}
+		
+	}
+	
+	
+	@Override
+	public List<WatchEntity> findByBrand(String brand) {
+		System.out.println("Running Find by brand in repo:" + brand);
+		EntityManager manager = this.entityManagerFactory.createEntityManager();
+		try {
+			Query query = manager.createNamedQuery("findByBrand");
+			query.setParameter("brand", brand);
+			List<WatchEntity> list = query.getResultList();
+			System.out.println("Total list found in repo:" + list.size());
+
+			return list;
+		} finally {
+			manager.close();
+		}
+	}
+	
+	
 }

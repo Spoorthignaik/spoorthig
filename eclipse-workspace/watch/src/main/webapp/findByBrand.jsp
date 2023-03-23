@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-   <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>X-workz</title>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -17,39 +18,39 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-
 <nav class="navbar navbar-light bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     
     <div class="text-center">
 			<img
-		src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
-		class="rounded" width=120 depth=100>
+		src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTy3DiMfcvQkcAz3DPpPOtoGbnvmcJfhjr8w&usqp=CAU"
+		class="rounded" width=200 depth=130>
 					</div>
 					
-					<a href="WatchSearch.jsp">WatchSearch</a>
-					<a href="index.jsp">Home</a>
+					
+					
+					 <a href="index.jsp"> Home</a>
   </div>
 </nav>
 
 
- 	<h3>
-		<span style="color: green;">${message }</span>
-	</h3>
+
+
+
+<h3 style="color: green;">Search By Brand</h3>
 	<h3>
-		<span style="color: red;">${error }</span>
+		<span style="color: red;">${messege }</span>
 	</h3>
 
-	<form action="delete" method="get">
+	<form action="findByBrand" method="get">
 
-	Search by Brand <input type="text" name="Brand" /> <input type="submit"
+	Search by Brand <input type="text" name="brand" /> <input type="submit"
 			value="search" />
 	</form>&nbsp;&nbsp;&nbsp;
 
 	<div>
-	<tab
-	le class="table table-bordered">
+	<table class="table table-bordered">
 	<tr>
 	<th scope="col">Id</th>
 	<th scope="col">Brand</th>
@@ -57,6 +58,9 @@
 	<th scope="col">Price</th>
 	<th scope="col">Warranty</th>
 	<th scope="col">Type</th>
+	<th scope="col">Edit</th>
+	<th scope="col">Delete</th>
+	
 	 
 	</tr>
 	
@@ -68,7 +72,8 @@
 	<td>${d.price}</td>
 	<td>${d.warranty}</td>
 	<td>${d.type}</td>
-	
+	<td> <a href="update?id=${d.id }">Edit</a></td>
+	<td> <a href="delete?id=${d.id }">Delete</a></td>
 	
 	</tr>
 	

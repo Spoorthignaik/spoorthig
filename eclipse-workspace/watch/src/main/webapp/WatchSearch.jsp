@@ -24,8 +24,8 @@
     
     <div class="text-center">
 			<img
-		src="https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
-		class="rounded" width=120 depth=100>
+		src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTy3DiMfcvQkcAz3DPpPOtoGbnvmcJfhjr8w&usqp=CAU"
+		class="rounded" width=200 depth=130>
 					</div>
 					
 					

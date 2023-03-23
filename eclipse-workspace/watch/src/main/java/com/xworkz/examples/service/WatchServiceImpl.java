@@ -10,6 +10,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,10 @@ import com.xworkz.examples.dto.WatchDto;
 import com.xworkz.examples.entity.WatchEntity;
 import com.xworkz.examples.repository.WatchRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class WatchServiceImpl implements WatchService {
 
 	@Autowired
@@ -104,7 +108,6 @@ public class WatchServiceImpl implements WatchService {
 		return WatchService.super.findByType(type);
 	}
 
-	
 	@Override
 	public Set<ConstraintViolation<WatchDto>> validateAndUpdate(WatchDto dto) {
 
@@ -128,17 +131,95 @@ public class WatchServiceImpl implements WatchService {
 		entity.setId(dto.getId());
 
 		boolean saved = this.watchRepository.update(entity);
-		System.out.println("entity data is saved in "+saved);
+		System.out.println("entity data is saved in " + saved);
 		return Collections.emptySet();
 	}
 
-	
 	@Override
-	public boolean deleteById(int id) {
-		System.out.println("running deleteById in service impl");
-			boolean deleted = this.watchRepository.deleteById(id);
-		return true;
+	public WatchDto deleteById(int id) {
+		System.out.println("Runnig delete by id in service:" + id);
+		if (id > 0) {
+			WatchEntity entity = this.watchRepository.deleteById(id);
+
+			/*
+			 * if(entity!=null) { FruitsDto dto=new FruitsDto(); dto.setId(entity.getId());
+			 * dto.setName(entity.getName()); dto.setSelectFruits(entity.getSelectFruits());
+			 * dto.setQuantity(entity.getQuantity()); dto.setLocation(entity.getLocation());
+			 * dto.setMobileNumber(entity.getMobileNumber()); return dto;
+			 */
+		}
+		return WatchService.super.deleteById(id);
 	}
 
-	
+	@Override
+	public List<WatchDto> findAll() {
+		System.out.println("Running FindAll in service");
+		List<WatchEntity> entities = this.watchRepository.findAll();
+
+		List<WatchDto> listDto = new ArrayList<WatchDto>();
+		for (WatchEntity fruitsEntity : entities) {
+			WatchDto dto = new WatchDto();
+			BeanUtils.copyProperties(fruitsEntity, dto);
+
+			listDto.add(dto);
+		}
+
+		return listDto;
+	}
+
+	@Override
+	public List<WatchDto> findByBrandAndType(String brand, String type) {
+		System.out.println("Running findByNameAndLocation in service: " + brand + type);
+		if ((brand != null && !brand.isEmpty()) || (type != null && !type.isEmpty())) {
+			List<WatchEntity> entities = this.watchRepository.findByBrandAndType(brand, type);
+
+			List<WatchDto> listDtos = new ArrayList<WatchDto>();
+			for (WatchEntity watchEntity : entities) {
+				WatchDto dto = new WatchDto();
+				BeanUtils.copyProperties(watchEntity, dto);
+				listDtos.add(dto);
+				System.out.println("Size of dtos:" + listDtos.size());
+				System.out.println("Size of entitys:" + entities.size());
+				return listDtos;
+			}
+		} else {
+			System.out.println("Name ANd LOcation in invalid:" + brand + type);
+		}
+		return WatchService.super.findByBrandAndType(brand, type);
+
+	}
+
+	@Override
+	public List<WatchDto> findByBrand(String brand) {
+		System.out.println("Running findByBrand in service:" + brand);
+
+		if (brand != null && !brand.isEmpty()) {
+			List<WatchEntity> entity = this.watchRepository.findByBrand(brand);
+
+			List<WatchDto> listDto = new ArrayList<WatchDto>();
+
+			for (WatchEntity watchEntity : entity) {
+
+				WatchDto dto = new WatchDto();
+				BeanUtils.copyProperties(watchEntity, dto);
+				/*
+				 * dto.setId(fruitsEntity.getId()); dto.setName(fruitsEntity.getName());
+				 * dto.setSelectFruits(fruitsEntity.getSelectFruits());
+				 * dto.setQuantity(fruitsEntity.getQuantity());
+				 * dto.setLocation(fruitsEntity.getLocation());
+				 * dto.setMobileNumber(fruitsEntity.getMobileNumber());
+				 */
+				listDto.add(dto);
+
+				System.out.println("Size of dtos:" + listDto.size());
+				System.out.println("Size of entitys:" + entity.size());
+				return listDto;
+
+			}
+		} else {
+			System.out.println("Invalid name");
+		}
+		return WatchService.super.findByBrand(brand);
+	}
+
 }

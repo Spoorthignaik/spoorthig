@@ -13,7 +13,7 @@ public interface WatchRepository {
    
    boolean update(WatchEntity watchEntity);
    
-   boolean  deleteById(int id); 
+   
 	
 	 default WatchEntity findById(int id)
 	 {
@@ -23,4 +23,19 @@ public interface WatchRepository {
 	 default List<WatchEntity>findByType(String type){
 		 return Collections.emptyList();
 	 }
+	 
+	 default WatchEntity deleteById(int id) {
+			return null;
+		}
+	 default List<WatchEntity> findAll() {
+			return Collections.emptyList();
+		}
+	 
+	 default List<WatchEntity> findByBrand(String name) {
+			return Collections.emptyList();
+		}
+	 
+	 default List<WatchEntity> findByBrandAndType(String brand,String type) {
+			return Collections.emptyList();
+		}
 }

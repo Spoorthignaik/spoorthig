@@ -44,22 +44,43 @@
 
 <form action="clock" method="post">
 <pre>
-Type<input type="text" name="type" value="${dto.type}"/>
-Warranty<input type="number" name="warranty"/><br>
-price<input type="number" name="price"/><br>
-Brand<select name="brand">
-<option value="">SELECT</option>
-<c:forEach items="${brand}" var="b">
-<option value="${b}">${b}</option>
-</c:forEach>
-</select><br>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Type</span>
+  <input type="text" name="type" class="form-control" placeholder="Enter Type"   value="${dto.type}"/>
+</div>
 
-Color<select name="color">
-<option value="">SELECT</option>
-<c:forEach items="${color}" var="c">
-<option value="${c}">${c}</option>
-</c:forEach>
-</select><br>
+<div class="input-group mb-3">
+  <span class="input-group-text">Warranty</span>
+  <input type="number" class="form-control" name="warranty" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Price</span>
+  <input type="number" class="form-control" name="price" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text">Brand</label>
+  <select class="form-select" id="inputGroupSelect01" name="brand">
+    <option value="">SELECT</option>
+    <c:forEach items="${brand}" var="b">
+    <option value="${b}">${b}</option>
+    </c:forEach>
+  </select>
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text" >Color</label>
+  <select class="form-select" id="inputGroupSelect01" name="color">
+    <option value="">SELECT</option>
+    <c:forEach items="${color}" var="c">
+    <option value="${c}">${c}</option>
+    </c:forEach>
+  </select>
+</div>
+
 <input type="submit" value="Save"/>
 
 </pre>
